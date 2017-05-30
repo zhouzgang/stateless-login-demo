@@ -18,8 +18,9 @@ public class TokenInterceptor extends WebMvcConfigurerAdapter {
     registry.addInterceptor(new TokenHandlerInterceptor())
         //添加需要验证登录用户操作权限的请求
 //        .addPathPatterns("/*", "/testContrl/update*", "/testContrl/delete*")
-        .addPathPatterns("/user/**");
+        // 前后端没有分离，得考虑前端静态资源的访问，或者给请求添加／api 配置
+        .addPathPatterns("/**")
         //排除不需要验证登录用户操作权限的请求
-//        .excludePathPatterns("/userCtrl/*");
+        .excludePathPatterns("/user/login");
   }
 }
