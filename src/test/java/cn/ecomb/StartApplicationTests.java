@@ -4,7 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import cn.ecomb.controller.auth.LoginController;
+import cn.ecomb.controller.auth.UserController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class StartApplicationTests {
 
 	@Before
 	public void setUp() throws Exception {
-		mvc = MockMvcBuilders.standaloneSetup(new LoginController()).build();
+		mvc = MockMvcBuilders.standaloneSetup(new UserController()).build();
 	}
 
 	@Test
